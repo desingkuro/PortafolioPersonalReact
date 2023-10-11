@@ -1,0 +1,115 @@
+
+.card {
+    width: 330px;
+    min-height: 350px;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 1;
+    cursor: pointer;
+    border: 1px solid rgba(219, 219, 219, 0.199);
+    padding: 0px 10px;
+   }
+   
+   .tools {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 9px;
+   }
+   
+   .circle {
+    padding: 0 4px;
+   }
+   
+   .box {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+    transition: linear .2s;
+   }
+   .box:hover{
+    transform: scale(1.2);
+    transition: linear .2s;
+   }
+   
+   .red {
+    background-color: #ff605c;
+   }
+
+   
+   .yellow {
+    background-color: #ffbd44;
+   }
+   
+   .green {
+    background-color: #00ca4e;
+   }
+   
+
+.card__content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+.imagenProyecto{
+    width: 100%;
+    height: 50%;
+    >img{
+        height: 100%;
+        border-radius: 10px;
+        width: 100%;
+    }
+}
+
+.tituloProyecto{
+    font-size: 1.2em;
+    font-weight: 800;
+    color: aliceblue;
+}
+
+.subTitulo{
+    font-size: 1em;
+    font-weight: 800;
+    color: #d384c6;
+}
+
+.contenedorTecnologias{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3px;
+    gap:5px;
+    >div{
+        height: 30px;
+        padding: 0% 10px;
+        border:1px solid grey ;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >span{
+            color: aliceblue;
+            font-weight: 800;
+        }
+    }
+}
+
+.contenedorLinks{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}

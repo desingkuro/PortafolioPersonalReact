@@ -1,0 +1,42 @@
+.Btn {
+    width: 110px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(22, 22, 22);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  
+  
+  .Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: #d384c6;
+    border-radius: 50%;
+    left: -110%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: hard-light;
+  }
+
+  
+  .Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(87%,-50%);
+  }
+  
+  .Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+  }

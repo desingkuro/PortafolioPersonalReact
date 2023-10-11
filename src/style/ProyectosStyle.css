@@ -1,0 +1,11 @@
+.contenedorProyectos{
+    min-height: 600px;
+    width: 100%;
+    min-width: 380px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}

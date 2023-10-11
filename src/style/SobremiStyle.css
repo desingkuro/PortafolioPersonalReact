@@ -1,0 +1,181 @@
+.sobremiContainer{
+    min-height: 100vh;
+    width: 100%;
+    background-color:var(--oscuro);
+    padding-top:70px;
+}
+.contenidoPrincipal{
+    min-height: 80vh;
+    width: 100%;
+    min-width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 50px;
+}
+.division{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >p{
+        font-family: JetBrains Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+        --tw-text-opacity: 1;
+        color: rgb(168 127 251 / var(--tw-text-opacity));
+        font-weight: 900;
+        font-size: 4em;
+        transform: rotate(90deg);
+    }
+}
+
+.sectionSobremi{
+    min-height: 200px;
+    min-width: 370px;
+    width: 100%;
+    padding: 10px;
+}
+
+.sectionSobremi:first-child{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgba(219, 219, 219, 0.199);
+    
+    >p{
+        font-size: .9em;
+        --tw-text-opacity: 1;
+        color: rgb(191 199 210 / var(--tw-text-opacity));
+        max-width: 600px;
+    }
+}
+
+.sectionSobremi:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    >.estudios{
+        width: 60%;
+        height: 100%;
+        min-width: 370px;
+        position: relative;
+        padding: 0px 15px;
+        color: var(--texto);
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        border: 1px solid rgba(219, 219, 219, 0.199);
+    }
+}
+
+.estudios::after{
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: #a87ffb80;
+    border-radius: 20px;
+    left: 0%;
+    top: 0%;
+}
+
+.formaciones{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 360px;
+    padding: 10px;
+
+    >h2{
+        margin-bottom: 10px;
+    }
+
+    >ul>li{
+        margin-bottom: 10px;
+        >h3{
+            font-size: 1em;
+        }
+
+        >span{
+            color: #c0a0ff;
+        }
+    }
+}
+
+.resaltadoFormaciones{
+    color: #ffd9a0cb;
+}
+
+.logoSobremi{ 
+    height: 36px;
+    width: 36px;
+}
+
+.tituloSobremi{
+    color: var(--texto);
+    font-family: Google Sans Display,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    font-weight: 500;
+    letter-spacing: -.025em;
+    font-size: 2rem;
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.animacionSobremi{
+    height: 300px;
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >img{
+        height: 200px;
+    }
+}
+
+.sectionSobremi:nth-child(3){
+    overflow: hidden;
+    height: 270px;
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    gap: 20px;
+}
+
+.itemSkills{
+    animation: scroll 40s linear infinite;
+    height: 220px;
+    min-width: 220px;
+    border-radius: 20px;
+    position: sticky;
+    border: 1px solid grey;
+    color: white;
+    opacity: .7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(85, 85, 85, 0.596);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(85, 85, 85, 0.596);
+    box-shadow: 0px 0px 8px 2px rgba(85, 85, 85, 0.596);
+}
+
+
+@keyframes scroll {
+    0%{
+        transform: translateX(900);
+    }
+    100%{
+        transform: translateX(calc(-220px *7));
+    }
+}

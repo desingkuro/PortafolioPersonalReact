@@ -1,0 +1,95 @@
+.contenedor{
+    width: 100%;
+    min-height: 75vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.presentacion{
+    width: 90%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 8888;
+    margin-top: 50px;
+
+    >.principalDiv{
+        height:100%;
+        width: 90%;
+        min-width: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+
+
+.fotoPerfil{
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s linear;
+    box-sizing: content-box;
+    border:1px solid  #ffffff;
+}
+
+.fotoPerfil:hover{
+    transition: 1s ease-in-out;
+    animation: borde 3s linear infinite;
+}
+
+.tarjetaPresentacion{
+    min-height: 200px;
+    width: 50%;
+    min-width: 370px;
+    padding: 10px;
+
+    background: rgba(202, 202, 202, 0.062);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.486);
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+
+    >.titulo{
+        color: var(--texto);
+        font-size: 2em;
+        cursor:pointer;
+    }
+    >h2{
+        color: var(--texto);
+        font-size: 3em;
+        cursor:pointer;
+    }
+}
+
+@keyframes borde {
+    0%{
+        border:2px solid  #5f8fff;
+        border-bottom: 0px;
+    }
+    100%{
+        border:2px solid #f68084;
+        border-bottom: 0px;
+    }
+}
+
+@media (max-width:768px) {
+    .contenedor{
+        margin-bottom: 50px;
+    }
+}

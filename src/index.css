@@ -1,0 +1,22 @@
+:root {
+  --texto:#fffffff3;
+  --modaro:#a87ffb80;
+  --oscuro: #161e29;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--oscuro);
+  position: relative;
+}
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+li{
+  list-style: none;
+}
+
