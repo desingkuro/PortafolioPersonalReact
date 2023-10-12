@@ -1,7 +1,7 @@
 import '../style/Home.css'
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { particulas } from '../particulas/particlesjs-config';
 import foto from '../assets/photo.jpeg'
 
@@ -10,9 +10,7 @@ export function Home() {
         loadFull(engine)
     }, [])
 
-    function separarPalabra(palabra) {
-        return palabra.split('');
-    }
+    const [palabra,setPalabra] = useState('Desarrollador FrontEnd');    
 
     return (
         <main className='contenedor'>
@@ -21,7 +19,7 @@ export function Home() {
                     <img src={foto} alt="" className='fotoPerfil'/>
                     <div className='tarjetaPresentacion'>
                         <h1 className='titulo'>{'Andres Licona'}</h1>
-                        <h2>{'Desarrollador FrontEnd'}</h2>
+                        <h2>{palabra}</h2>
                     </div>
                 </main>
             </section>

@@ -8,6 +8,7 @@
 }
 
 .presentacion{
+    max-width: 1100px;
     width: 90%;
     min-height: 300px;
     display: flex;
@@ -74,6 +75,13 @@
         color: var(--texto);
         font-size: 3em;
         cursor:pointer;
+        opacity: .5;
+        transition: linear .3s;
+    }
+    >h2:hover{
+        color: var(--texto);
+        opacity: 1;
+        transition: linear .3s;
     }
 }
 
