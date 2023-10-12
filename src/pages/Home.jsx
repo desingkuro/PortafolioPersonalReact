@@ -1,7 +1,7 @@
 import '../style/Home.css'
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { particulas } from '../particulas/particlesjs-config';
 import foto from '../assets/photo.jpeg'
 

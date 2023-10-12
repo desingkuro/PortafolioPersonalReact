@@ -1,7 +1,32 @@
 import '../style/cardProyectosStyle.css'
 import { Boton } from './Boton'
 
+
 export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
+    function renderBtn(){
+        if(git==''){
+            return(
+                <>
+                    <Boton texto={'ver Proyecto'} type={'link'} link={proyectoLink}/>
+                </>
+            )
+        }
+        if(proyectoLink!=''){
+            return(
+                <>
+                    <Boton texto={'Github'} type={'git'} link={git} />
+                    <Boton texto={'ver Proyecto'} type={'link'} link={proyectoLink}/>
+                </>
+            )
+        }
+        else{    
+            return(
+                <>
+                    <Boton texto={'Github'} type={'git'} link={git} />
+                </>
+            )
+        }
+    }
     return(
         <div className="card">
             <div className="tools">
@@ -29,10 +54,11 @@ export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
                     })}
                 </div>
                 <div className='contenedorLinks'>
-                    <Boton texto={'Github'} type={'git'} link={git} />
-                    <Boton texto={'ver Proyecto'} type={'link'} link={proyectoLink} />
+                    {renderBtn()}                
                 </div>
             </div>
         </div>
     )
 }
+//<Boton texto={'Github'} type={'git'} link={git} />
+//<Boton texto={'ver Proyecto'} type={'link'} link={proyectoLink}/>
