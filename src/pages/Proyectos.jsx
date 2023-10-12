@@ -1,24 +1,19 @@
+import { useContext } from 'react'
 import { CardProyectos } from '../components/CardProyectos'
 import '../style/ProyectosStyle.css'
-import imagen from'../assets/prueba.jpg'
+import { contextoPrincipal } from '../../context/contexto';
 
 export function Proyectos(){
+    const {proyectos} = useContext(contextoPrincipal);
     return(
         <section className='contenedorProyectos'>
-            {proyectos.map(e,i=>{
-                return(
-                    <CardProyectos imagen={e.img} titulo={e.titulo} key={i} tecnologia={e.tecnologias}/>
-                )
-            })}
+            {
+                proyectos.map((e,i)=>{
+                    return(
+                        <CardProyectos tecnologia={e.tecnologias} titulo={e.titulo} imagen={e.img} key={e.titulo} git={e.git} proyectoLink={e.link}/>
+                    )
+                })
+            }
         </section>
     )
 }
-
-const proyectos = [
-    {
-        'titulo':'App Puc (Plan unico de cuentas)',
-        'subTitulo':'Tecnologias',
-        'tecnologias':[['React Native','Flask','Mongo']],
-        'img':imagen
-    },
-]

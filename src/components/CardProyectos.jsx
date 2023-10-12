@@ -1,7 +1,7 @@
 import '../style/cardProyectosStyle.css'
 import { Boton } from './Boton'
 
-export function CardProyectos({titulo,tecnologia,imagen}){
+export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
     return(
         <div class="card">
             <div class="tools">
@@ -29,8 +29,8 @@ export function CardProyectos({titulo,tecnologia,imagen}){
                     })}
                 </div>
                 <div className='contenedorLinks'>
-                    <Boton texto={'Github'} type={'git'}/>
-                    <Boton texto={'ver Proyecto'} type={'link'}/>
+                    <Boton texto={'Github'} type={'git'} link={git}/>
+                    <Boton texto={'ver Proyecto'} type={'link'} link={proyectoLink}/>
                 </div>
             </div>
         </div>

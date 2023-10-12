@@ -5,6 +5,7 @@ import { Contacto } from './components/Contacto'
 import { Sobremi } from './pages/Sobremi'
 import { Division } from './components/Division'
 import { Proyectos } from './pages/Proyectos'
+import { ContextoProveedor } from '../context/contexto'
 
 function App() {
   return (
@@ -15,12 +16,14 @@ function App() {
           <p>KuroDev</p>
         </nav>
       </header>
-      <Home/>
-      <Division simbolo={'~>'}/>
-      <Sobremi/>
-      <Division simbolo={'~>'}/>
-      <Proyectos/>
-      <Contacto/>
+      <ContextoProveedor>
+        <Home/>
+        <Division simbolo={'~>'}/>
+        <Sobremi/>
+        <Division simbolo={'~>'}/>
+        <Proyectos/>
+        <Contacto/>
+      </ContextoProveedor>
     </>
   )
 }
