@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../style/contactoStyle.css'
 import { BiDownArrowAlt, BiUpArrowAlt} from "react-icons/bi";
+import { AiFillGithub, AiFillLinkedin, AiFillInstagram} from "react-icons/ai";
 
 export const Contacto =()=>{
     const [abrirContacto,cerrarContacto] = useState("contenedorBorde");
@@ -25,8 +26,43 @@ export const Contacto =()=>{
                     {toogleFlecha()}
                 </span>
             </header>
-            <main>
-                <h2>hola compae sisas </h2>
+            <main className='contenedorContactos'>
+                <div className="light-button">
+                    <button className="bt" onClick={()=>{window.open('https://github.com/desingkuro','_blank')}}>
+                        <div className="light-holder">
+                            <div className="dot"></div>
+                            <div className="light"></div>
+                        </div>
+                        <div className="button-holder">
+                            <AiFillGithub size={60}/>
+                            <p>Github</p>
+                        </div>
+                    </button>
+                </div>
+                <div className="light-button">
+                    <button className="bt" onClick={()=>{window.open('https://www.linkedin.com/in/andr%C3%A9s-licona-machado','_blank')}}>
+                        <div className="light-holder">
+                            <div className="dot"></div>
+                            <div className="light"></div>
+                        </div>
+                        <div className="button-holder">
+                        <AiFillLinkedin size={60}/>
+                            <p>Linkedi</p>
+                        </div>
+                    </button>
+                </div>
+                <div className="light-button">
+                    <button className="bt" onClick={()=>{window.open('https://www.instagram.com/and_licona/','_blank')}}>
+                        <div className="light-holder">
+                            <div className="dot"></div>
+                            <div className="light"></div>
+                        </div>
+                        <div className="button-holder">
+                            <AiFillInstagram size={60}/>
+                            <p>Intagram</p>
+                        </div>
+                    </button>
+                </div>
             </main>
         </div>
     )

@@ -1,4 +1,7 @@
 import imagen from'../src/assets/prueba.jpg'
+import puc from'../src/assets/puc.png'
+import encriptador from'../src/assets/encriptador.jpg'
+import barbie from'../src/assets/barbie.png'
 import { createContext } from "react";
 
 export const contextoPrincipal = createContext();
@@ -8,7 +11,7 @@ export function ContextoProveedor({children}){
         {
             'titulo':'App Puc (Plan unico de cuentas)',
             'tecnologias':['React Native'],
-            'img':imagen,
+            'img':puc,
             'git':'https://github.com/desingkuro/Puc-App.git',
             'link':'https://puc.uptodown.com/android'
         },
@@ -22,14 +25,14 @@ export function ContextoProveedor({children}){
         {
             'titulo':'Encriptador de texto (Alura Challenge)',
             'tecnologias':['Html','Css','Js'],
-            'img':imagen,
+            'img':encriptador,
             'git':'https://github.com/desingkuro/page.github.io.git',
             'link':'https://desingkuro.github.io/page.github.io/'
         },
         {
             'titulo':'Pagina para pelicula (Barbie Movie Page)',
             'tecnologias':['Html','Css','React'],
-            'img':imagen,
+            'img':barbie,
             'git':'',
             'link':'https://barbiemovieonline.netlify.app/'
         },
