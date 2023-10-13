@@ -22,7 +22,7 @@
     flex-direction: column;
     gap: 10px;
 
-    transition: .4s linear;
+    transition: .2s linear;
     border: 1px solid var(--texto);
     border-bottom: 0px;
     left: 0%; right: 0%; bottom: 0%; margin: auto;
@@ -45,7 +45,6 @@
         border-bottom: 0px;
     }
 }
-
 
 .cabecera{
     height: 50px;
@@ -130,7 +129,7 @@
     top: 10%;
     width: 10px;
     height: 10px;
-    background-color: #6a606b;
+    background-color: #636366;
     border-radius: 10px;
     z-index: 2;
   }
@@ -158,4 +157,31 @@
     background: rgb(255, 255, 255);
     background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
     top: 10%;
+  }
+
+  @media (max-width:780px) {
+    .light-button button.bt .button-holder svg {
+        fill: rgba(88, 101, 242, 1);
+      }
+      
+      .light-button button.bt .button-holder {
+        color: rgba(88, 101, 242, 1);
+        outline: rgba(88, 101, 242, 1) 2px solid;
+        outline-offset: 2px;
+      }
+      
+      .light-button button.bt .light-holder .light {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+        top: 10%;
+      }
+      .light-button button.bt .light-holder .dot {
+        position: absolute;
+        top: 10%;
+        width: 10px;
+        height: 10px;
+        background-color: #5e55ac;
+        border-radius: 10px;
+        z-index: 2;
+      }
   }

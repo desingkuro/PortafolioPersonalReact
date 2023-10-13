@@ -4,8 +4,13 @@
     min-width: 380px;
     padding:10px 100px 100px 100px;
     display: flex;
-
-  
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+@media (max-width:600px) {
+    .contenedorProyectos{
+        padding: 10px 20px 80px 20px;
+    }
 }

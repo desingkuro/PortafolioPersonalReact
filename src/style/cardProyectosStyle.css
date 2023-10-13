@@ -1,8 +1,7 @@
 
 .card {
-    width: 330px;
+    width: 300px;
     min-height: 400px;
-    margin: 0 auto;
     border-radius: 8px;
     z-index: 1;
     cursor: pointer;
