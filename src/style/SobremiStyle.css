@@ -151,7 +151,7 @@
 }
 
 .itemSkills{
-    animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
     height: 220px;
     min-width: 220px;
     border-radius: 20px;
@@ -176,7 +176,10 @@
     0%{
         transform: translateX(900);
     }
-    100%{
+    95%{
         transform: translateX(calc(-220px *7));
+    }
+    100%{
+        transform: translateX(calc(220px));
     }
 }
