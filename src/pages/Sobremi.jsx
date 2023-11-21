@@ -64,7 +64,10 @@ export const Sobremi=()=>{
                     <img src={logo} alt="Logotipo de Kuro" className='logoSobremi'/>
                     <h2 className='tituloSobremi'>Mas sobre mi</h2>
                     <p>
-                    Soy Andrés Licona, un apasionado desarrollador web frontend con una dedicación especial por la creación de experiencias digitales excepcionales. Mi enfoque se centra en el diseño estético, la usabilidad y el rendimiento, lo que se refleja en proyectos que abarcan desde sitios web de comercio electrónico hasta aplicaciones interactivas. Mi objetivo es transformar ideas en realidad digital, trabajando estrechamente con mis clientes para lograr resultados impresionantes y funcionales. Si buscas una mente creativa y hábil en desarrollo web frontend para tu próximo proyecto, estás en el lugar correcto.
+                        Soy un desarrollador Front-End, enfocado en el diseño estético, 
+                        la usabilidad y el rendimiento.Tambien cuento con buenas habilidades de comunicacion,
+                        edicion y diseño, asi como conocimientos de diferentes lenguajes. Si buscas una mente creativa y hábil en desarrollo 
+                        frontend para tu próximo proyecto, estás en el lugar correcto.
                     </p>
                 </section>
                 <section className="sectionSobremi">
