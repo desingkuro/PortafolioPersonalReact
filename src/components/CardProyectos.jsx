@@ -45,7 +45,7 @@ export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
                     <img src={imagen} alt="" />
                 </div>
                 <p className='tituloProyecto'>{titulo}</p>
-                <span className='subTitulo'>Tecnologias</span>
+                <span className='subTitulo'>Tecnologias:</span>
                 <div className='contenedorTecnologias'>
                     {tecnologia.map((e,i)=>{
                         return(

@@ -1,5 +1,6 @@
 import imagen from'../src/assets/prueba.jpg'
 import puc from'../src/assets/puc.png'
+import tesla from'../src/assets/tesla.png'
 import encriptador from'../src/assets/encriptador.jpg'
 import barbie from'../src/assets/barbie.png'
 import { createContext } from "react";
@@ -8,6 +9,13 @@ export const contextoPrincipal = createContext();
 
 export function ContextoProveedor({children}){
     const proyectos = [
+        {
+            'titulo':'Landin page de Tesla',
+            'tecnologias':['Astro','JavaScript'],
+            'img':tesla,
+            'git':'https://github.com/desingkuro/tesla-landing-copy.git',
+            'link':'https://tesla-landing-copy.netlify.app/'
+        },
         {
             'titulo':'App Puc (Plan unico de cuentas)',
             'tecnologias':['React Native'],

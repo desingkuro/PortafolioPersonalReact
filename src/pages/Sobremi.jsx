@@ -65,8 +65,8 @@ export const Sobremi=()=>{
                     <h2 className='tituloSobremi'>Mas sobre mi</h2>
                     <p>
                         Soy un desarrollador Front-End, enfocado en el diseño estético, 
-                        la usabilidad y el rendimiento.Tambien cuento con buenas habilidades de comunicacion,
-                        edicion y diseño, asi como conocimientos de diferentes lenguajes. Si buscas una mente creativa y hábil en desarrollo 
+                        la usabilidad y el rendimiento. También cuento con buenas habilidades de comunicación,
+                        edición y diseño, así como conocimientos de diferentes lenguajes. Si buscas una mente creativa y hábil en desarrollo 
                         frontend para tu próximo proyecto, estás en el lugar correcto.
                     </p>
                 </section>
