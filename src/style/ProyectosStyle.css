@@ -8,6 +8,14 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+.tituloSectionProyecto{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 30px;
+    color: white;
+}
 
 @media (max-width:600px) {
     .contenedorProyectos{
