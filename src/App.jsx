@@ -6,14 +6,22 @@ import { Sobremi } from './pages/Sobremi'
 import { Division } from './components/Division'
 import { Proyectos } from './pages/Proyectos'
 import { ContextoProveedor } from '../context/contexto'
+import { BtnContacto } from './components/BtnContanto'
 
 function App() {
   return (
     <>
       <header className='header'>
         <nav>
-          <img src={logo} alt="Logotipo de Kuro" className='logo'/>
-          <p>KuroDev</p>
+          <figure>
+            <img src={logo} alt="Logotipo de Kuro" className='logo'/>
+            <span>KuroDev</span>
+          </figure>
+          <div className='containerIcons'>
+            <BtnContacto redSocial={'Instagram'}/>
+            <BtnContacto redSocial={'Linkedin'}/>
+            <BtnContacto redSocial={'GitHub'}/>
+          </div>
         </nav>
       </header>
       <ContextoProveedor>
@@ -22,7 +30,6 @@ function App() {
         <Sobremi/>
         <Division simbolo={'~>'}/>
         <Proyectos/>
-        <Contacto/>
       </ContextoProveedor>
     </>
   )
