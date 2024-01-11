@@ -61,6 +61,13 @@ export const Sobremi=()=>{
         <section className="sobremiContainer">
             <main className='contenidoPrincipal'>
                 <section className="sectionSobremi">
+                    {skills.map((e,i)=>{
+                        return(
+                            <ItemSkills key={i} item={e}/>
+                        )
+                    })}
+                </section>
+                <section className="sectionSobremi">
                     <img src={logo} alt="Logotipo de Kuro" className='logoSobremi'/>
                     <h2 className='tituloSobremi'>Mas sobre mi</h2>
                     <p>
@@ -103,13 +110,6 @@ export const Sobremi=()=>{
                             </ul>
                         </section>
                     </div>
-                </section>
-                <section className="sectionSobremi">
-                    {skills.map((e,i)=>{
-                        return(
-                            <ItemSkills key={i} item={e}/>
-                        )
-                    })}
                 </section>
             </main>
         </section>

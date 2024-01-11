@@ -23,10 +23,6 @@ export function Home() {
                     </div>
                 </main>
             </section>
-            <Particles
-                options={particulas}
-                init={particesInit}
-            />
         </main>
     )
 }

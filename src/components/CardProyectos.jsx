@@ -2,7 +2,8 @@ import '../style/cardProyectosStyle.css'
 import { Boton } from './Boton'
 
 
-export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
+export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink,descripcion}){
+    
     function renderBtn(){
         if(git==''){
             return(
@@ -27,6 +28,7 @@ export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
             )
         }
     }
+
     return(
         <div className="card">
             <div className="tools">
@@ -42,9 +44,10 @@ export function CardProyectos({titulo,tecnologia,imagen,git,proyectoLink}){
             </div>
             <div className="card__content">
                 <div className='imagenProyecto'>
-                    <img src={imagen} alt="" />
+                    <img src={imagen} alt={titulo} />
                 </div>
                 <p className='tituloProyecto'>{titulo}</p>
+                <p className='descripcion'>{descripcion} </p>
                 <span className='subTitulo'>Tecnologias:</span>
                 <div className='contenedorTecnologias'>
                     {tecnologia.map((e,i)=>{
