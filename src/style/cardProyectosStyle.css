@@ -2,7 +2,7 @@
 .card {
     min-width: 300px;
     width: 500px;
-    min-height: 360px;
+    min-height: 500px;
     border-radius: 8px;
     z-index: 1;
     border: 1px solid rgba(219, 219, 219, 0.199);
@@ -90,6 +90,7 @@
 .descripcion{
     color: #ffff;
     margin-bottom: 10px;
+    min-height: 50px;
 }
 
 .contenedorTecnologias{
