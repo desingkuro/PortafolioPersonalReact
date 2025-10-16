@@ -1,4 +1,4 @@
-import logo from '../assets/logoKurowhite.png'
+import logo from '../../../assets/logoKurowhite.png'
 import { BtnContacto } from './BtnContanto'
 import '../style/headerStyle.css'
 

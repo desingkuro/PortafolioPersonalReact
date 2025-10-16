@@ -1,7 +1,7 @@
 import '../style/Footer.css';
 import { BtnContacto } from './BtnContanto';
 import Particles from 'react-tsparticles';
-import { particulas } from '../particulas/particlesjs-config';
+import { particulas } from '../utils/particulas/particlesjs-config';
 import { useCallback } from 'react';
 import { loadFull } from 'tsparticles';
 

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { CardProyectos } from '../components/CardProyectos'
-import '../style/ProyectosStyle.css'
-import { contextoPrincipal } from '../../context/contexto';
+import { CardProyectos } from '../shared/components/CardProyectos'
+import '../shared/style/ProyectosStyle.css'
+import { contextoPrincipal } from '../shared/providers/context/contexto';
 
 export function Proyectos(){
     
