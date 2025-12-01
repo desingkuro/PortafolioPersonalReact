@@ -1,0 +1,21 @@
+@layer theme {
+  .bg-primary {
+    background-color: #141414;
+    position: relative;
+    overflow: hidden;
+  }
+  .bg-secondary {
+    background-color: #272727;
+  }
+  .bg-gray {
+    background-color: #a9a9a9;
+  }
+  .bg-white {
+    background-color: #fff;
+  }
+  .bg-red {
+    background-color: #ff5555;
+  }
+}
+
+

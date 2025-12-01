@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "./app/shared/styles/theme.css";
+
+@font-face {
+  font-family: "neue-machina-regular";
+  src: url("./assets/fonts/NeueMachina-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "neue-machina-ultraBold";
+  src: url("./assets/fonts/NeueMachina-Ultrabold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gallery";
+  src: url("./assets/fonts/gallery.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "neue-machina-ligth";
+  src: url("./assets/fonts/NeueMachina-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "neue-machina-regular", sans-serif;
+}
+
+body {
+  background: #141414;
+  color: #fff;
+}
+
+.gallery {
+  font-family: "gallery";
+}
+
+.neue-machina-regular {
+  font-family: "neue-machina-regular";
+}
+.neue-machina-ultraBold {
+  font-family: "neue-machina-ultraBold";
+}
+.neue-machina-ligth {
+  font-family: "neue-machina-ligth";
+}
+
+::view-transition-group(project-image-*) {
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 500px) {
+  .max-500 {
+    display: none;
+  }
+  .max-500__justify-center {
+    justify-content: center;
+  }
+}
+
