@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import type { ProjectsInterface } from "../providers/context/contexto";
+import type { ProjectsInterface } from "../interfaces/contextInterfaces";
 
 export default function ProjectCarousel({ project }: { project: ProjectsInterface }) {
     const [current, setCurrent] = useState(0);
@@ -31,7 +31,7 @@ export default function ProjectCarousel({ project }: { project: ProjectsInterfac
                 />
             ))}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {images.map((_, idx) => (
+                {images.map((_:string, idx:number) => (
                     <span key={idx} className={`w-3 h-3 rounded-full bg-white/60 ${idx === current ? "bg-black/90" : ""}`}></span>
                 ))}
             </div>

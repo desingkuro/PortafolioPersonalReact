@@ -5,7 +5,6 @@ import { BiArrowBack } from "react-icons/bi"
 import { useNavigate } from "react-router"
 import { motion } from "motion/react"
 import ProjectCarousel from "../../shared/components/ProjectCarrucel"
-import Tag from "../../shared/components/Tag"
 import SectionDetail from "../../shared/components/SectionDetail"
 
 export default function DetailProject() {
