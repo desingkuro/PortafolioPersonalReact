@@ -16,7 +16,7 @@ export default function Projects() {
             <main className="w-full flex items-center justify-center !py-6">
                 <section className="flex flex-wrap sm:gap-4 gap-8 md:w-[90%] sm:w-[95%] !py-2 min-w-[320px] items-center justify-center">
                     {projects.map((project, index) => {
-                        const isFullWidth = index % 3 === 0;
+                        const isFullWidth = index === 0;
                         return (
                             <motion.div
                                 key={project.id}
