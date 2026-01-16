@@ -9,6 +9,10 @@ import ticketsHome from "../../../../assets/img/projects/Ticket/ticketHome.jpeg"
 import ticketsCreate from "../../../../assets/img/projects/Ticket/ticketCreate.jpeg"
 import ticketsList from "../../../../assets/img/projects/Ticket/TicketList.jpeg"
 import pucPlayStore from "../../../../assets/img/projects/Puc/playStorePuc.png"
+import ml from "../../../../assets/img/projects/ML/image.png"
+import ml1 from "../../../../assets/img/projects/ML/image1.png"
+import ml2 from "../../../../assets/img/projects/ML/image2.png"
+import ml3 from "../../../../assets/img/projects/ML/image3.png"
 
 import {
   FaWhatsapp,
@@ -82,6 +86,15 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       git: "",
       link: null,
       description: "Plataforma desarrollada para la administracion y gestion de tickets, la cual tiene la finalidad de poder validar la veracidad de las mismas, dando la opcion de asignar como verificada o rechazda por el agente de transito, ademas de poder administrar de manera completa el despliegue de las camaras, su asignacion entre uchas otras tareas.",
+    },
+    {
+      id: 5,
+      title: 'Trabajo Final ML — Clasificación de caracteres japoneses',
+      tecnologies: ['Python 3.12', 'TensorFlow', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SciPy', 'OpenCV', 'Jupyter Notebook'],
+      img: [ml, ml1, ml2, ml3],
+      git: 'https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git',
+      link: [{ name: "Repo", url: "https://github.com/desingkuro/tesla-landing-copy.git" }],
+      description: 'Trabajo Final ML — Clasificación de caracteres japoneses, Objetivo: Clasificar imágenes 28x28 de 10 caracteres hiragana.caracteresjaponeses/TrabajoFinalML.ipynb caracteresjaponeses/test_data.csv (10,000 filas; columnas: Unnamed: 0, label, pixeles 0..783).',
     }
   ];
 
