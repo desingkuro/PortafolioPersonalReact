@@ -9,6 +9,8 @@ import ticketsHome from "../../../../assets/img/projects/Ticket/ticketHome.jpeg"
 import ticketsCreate from "../../../../assets/img/projects/Ticket/ticketCreate.jpeg"
 import ticketsList from "../../../../assets/img/projects/Ticket/TicketList.jpeg"
 import pucPlayStore from "../../../../assets/img/projects/Puc/playStorePuc.png"
+import pucDetail from "../../../../assets/img/projects/Puc/detailPuc.png"
+import pucPage from "../../../../assets/img/projects/Puc/pucPage.png"
 import ml from "../../../../assets/img/projects/ML/image.png"
 import ml1 from "../../../../assets/img/projects/ML/image1.png"
 import ml2 from "../../../../assets/img/projects/ML/image2.png"
@@ -48,7 +50,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       id: 1,
       title: "App Puc (Plan unico de cuentas)",
       tecnologies: ["React Native"],
-      img: [pucPlayStore],
+      img: [pucPlayStore,pucDetail,pucPage],
       git: "https://github.com/desingkuro/puc.git",
       //'link':'https://puc.uptodown.com/android',
       link: [

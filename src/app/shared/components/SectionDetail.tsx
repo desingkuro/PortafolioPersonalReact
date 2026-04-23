@@ -17,14 +17,14 @@ export default function SectionDetail({
     const typeReturnItems = {
         "links": listItems.map((item: any, index: number) => {
             return (
-                <a href={item.url} className="cursor-pointer" target="_blank" rel="noopener noreferrer" key={index}>
-                    <Tag className="text-[1rem] neue-machina-ultraBold hover:opacity-80 hover:scale-110 transition-all duration-300 ease-in-out">{item.name}</Tag>
+                <a href={item.url} className="cursor-pointer transition-all ease-in-out duration-300" target="_blank" rel="noopener noreferrer" key={index}>
+                    <Tag type="links" >{item.name}</Tag>
                 </a>
             )
         }),
         "tecnologies": listItems.map((item: any, index: number) => {
             return (
-                <Tag className="text-[1rem] neue-machina-ultraBold" key={index}>{item}</Tag>
+                <Tag type="tecnology" className="text-[1rem] neue-machina-ultraBold" key={index}>{item}</Tag>
             )
         }),
         "text": <p>{text}</p>,
