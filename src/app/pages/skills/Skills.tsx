@@ -2,7 +2,7 @@ import SkillCell from "../../shared/components/SkillCell";
 import { useContext } from "react";
 import { type SkillsInterface } from "../../shared/interfaces/contextInterfaces";
 import { motion } from "motion/react";
-import { contextoPrincipal } from "../../shared/providers/context/contexto";
+import { contextoPrincipal } from "../../shared/providers/context/context";
 import SEOHelmet from "../../shared/components/SEOHelmet";
 
 export default function Skills() {

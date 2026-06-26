@@ -1,4 +1,3 @@
-import { createContext } from "react";
 import { FaReact, FaPython, FaNodeJs, FaAngular } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import tesla from "../../../../assets/img/projects/Tesla/tesla.png"
@@ -30,14 +29,8 @@ import { BiLike } from "react-icons/bi";
 
 import { SiNestjs } from "react-icons/si";
 import type { ContactItemProps } from "../../components/ContactItem";
-import type { ContextoPrincipal, ContextoProveedorProps, ProjectsInterface, SkillsInterface, DataBlock } from "../../interfaces/contextInterfaces";
-
-export const contextoPrincipal = createContext<ContextoPrincipal>({
-  projects: [],
-  skills: [],
-  data: [],
-  contactItems: [],
-});
+import type { ContextoProveedorProps, ProjectsInterface, SkillsInterface, DataBlock } from "../../interfaces/contextInterfaces";
+import { contextoPrincipal } from "./context";
 
 
 export function ContextoProveedor({ children }: ContextoProveedorProps) {

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { motion } from "motion/react";
-import { contextoPrincipal } from "../../shared/providers/context/contexto";
+import { contextoPrincipal } from "../../shared/providers/context/context";
 import type { SkillsInterface, DataBlock, EducationItem } from "../../shared/interfaces/contextInterfaces";
 import SEOHelmet from "../../shared/components/SEOHelmet";
 

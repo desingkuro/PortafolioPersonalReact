@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router";
 import LayoutMain from "../layout/LayoutMain";
+import PageLoader from "../shared/components/PageLoader";
 
 const Home = lazy(() => import("../pages/home/Home"));
 const Projects = lazy(() => import("../pages/projects/Projects"));
@@ -9,14 +10,6 @@ const Skills = lazy(() => import("../pages/skills/Skills"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 const AboutPage = lazy(() => import("../pages/about/About"));
 const NotFoundPage = lazy(() => import("../pages/notFound/NotFound"));
-
-function PageLoader() {
-    return (
-        <div className="w-full h-full flex items-center justify-center !py-20">
-            <p className="text-white/50 text-lg">Cargando...</p>
-        </div>
-    );
-}
 
 const router = createBrowserRouter([
     {

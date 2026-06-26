@@ -1,6 +1,6 @@
 import ProjectCard from "../../shared/components/ProjectCard"
 import { useContext, useState } from "react"
-import { contextoPrincipal } from "../../shared/providers/context/contexto"
+import { contextoPrincipal } from "../../shared/providers/context/context"
 import { motion } from "motion/react"
 import SEOHelmet from "../../shared/components/SEOHelmet"
 

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { contextoPrincipal } from "../../shared/providers/context/contexto"
+import { contextoPrincipal } from "../../shared/providers/context/context"
 import { useParams } from "react-router"
 import { BiArrowBack } from "react-icons/bi"
 import { useNavigate } from "react-router"

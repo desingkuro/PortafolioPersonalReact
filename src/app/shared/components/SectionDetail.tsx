@@ -1,8 +1,13 @@
 import Tag from "./Tag";
 
+interface LinkItem {
+    name: string;
+    url: string;
+}
+
 interface SectionDetailProps {
     title: string;
-    listItems: string[] | any[];
+    listItems: string[] | LinkItem[];
     text?: string;
     type: "tecnologies" | "links" | "text";
 }
@@ -15,16 +20,16 @@ export default function SectionDetail({
 }: SectionDetailProps) {
 
     const typeReturnItems = {
-        "links": listItems.map((item: any, index: number) => {
+        "links": (listItems as LinkItem[]).map((item: LinkItem) => {
             return (
-                <a href={item.url} className="cursor-pointer transition-all ease-in-out duration-300" target="_blank" rel="noopener noreferrer" key={index}>
+                <a href={item.url} className="cursor-pointer transition-all ease-in-out duration-300" target="_blank" rel="noopener noreferrer" key={item.name}>
                     <Tag type="links" >{item.name}</Tag>
                 </a>
             )
         }),
-        "tecnologies": listItems.map((item: any, index: number) => {
+        "tecnologies": (listItems as string[]).map((item: string) => {
             return (
-                <Tag type="tecnology" className="text-[1rem] neue-machina-ultraBold" key={index}>{item}</Tag>
+                <Tag type="tecnology" className="text-[1rem] neue-machina-ultraBold" key={item}>{item}</Tag>
             )
         }),
         "text": <p>{text}</p>,
