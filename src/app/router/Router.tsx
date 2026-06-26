@@ -1,13 +1,22 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router";
-import Home from "../pages/home/Home";
 import LayoutMain from "../layout/LayoutMain";
-import Projects from "../pages/projects/Projects";
-import DetailProject from "../pages/projects/DetailProject";
-import Skills from "../pages/skills/Skills";
-import Contact from "../pages/Contact/Contact";
-import NotFoundPage from "../pages/notFound/NotFound";
-import AboutPage from "../pages/about/About";
 
+const Home = lazy(() => import("../pages/home/Home"));
+const Projects = lazy(() => import("../pages/projects/Projects"));
+const DetailProject = lazy(() => import("../pages/projects/DetailProject"));
+const Skills = lazy(() => import("../pages/skills/Skills"));
+const Contact = lazy(() => import("../pages/Contact/Contact"));
+const AboutPage = lazy(() => import("../pages/about/About"));
+const NotFoundPage = lazy(() => import("../pages/notFound/NotFound"));
+
+function PageLoader() {
+    return (
+        <div className="w-full h-full flex items-center justify-center !py-20">
+            <p className="text-white/50 text-lg">Cargando...</p>
+        </div>
+    );
+}
 
 const router = createBrowserRouter([
     {
@@ -16,31 +25,31 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: <Suspense fallback={<PageLoader />}><Home /></Suspense>
             },
             {
                 path: "/projects",
-                element: <Projects />,
+                element: <Suspense fallback={<PageLoader />}><Projects /></Suspense>,
             },
             {
                 path: "/projects/:id",
-                element: <DetailProject />
+                element: <Suspense fallback={<PageLoader />}><DetailProject /></Suspense>
             },
             {
                 path: "/skills",
-                element: <Skills />
+                element: <Suspense fallback={<PageLoader />}><Skills /></Suspense>
             },
             {
                 path: "/contact",
-                element: <Contact />
+                element: <Suspense fallback={<PageLoader />}><Contact /></Suspense>
             },
             {
                 path: "/about",
-                element: <AboutPage />
+                element: <Suspense fallback={<PageLoader />}><AboutPage /></Suspense>
             },
             {
                 path: "*",
-                element: <NotFoundPage />
+                element: <Suspense fallback={<PageLoader />}><NotFoundPage /></Suspense>
             }
         ]
     },

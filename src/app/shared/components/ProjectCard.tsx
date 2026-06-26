@@ -19,6 +19,7 @@ export default function ProjectCard({ title, image, id, setLoadimage }: ProjectC
             </div>
             <img
                 onLoad={() => setLoadimage(true)}
+                loading="lazy"
                 className="w-full h-full object-center object-center" src={image} alt={title} />
             <Link
                 to={`/projects/${id}`}

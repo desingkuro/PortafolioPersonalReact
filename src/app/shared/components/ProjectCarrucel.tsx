@@ -26,6 +26,7 @@ export default function ProjectCarousel({ project }: { project: ProjectsInterfac
                     key={index}
                     src={img}
                     alt={project?.title || "Project image"}
+                        loading="lazy"
                     className={`w-full h-full object-cover transition-opacity duration-700 absolute top-0 left-0
             ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}
           `}
