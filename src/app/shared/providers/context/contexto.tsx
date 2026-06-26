@@ -64,7 +64,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
     {
       id: 2,
       title: "Foto Detección",
-      description: "Plataforma desarrollada para la administracion yy gestion de infracciones realizadas por camaras de foto multas, la cual tiene la finalidad de poder validar la veracidad de las mismas, dando la opcion de asignar como verificada o rechazda por el agente de transito, ademas de poder administrar de manera completa el despliegue de las camaras, su asignacion entre uchas otras tareas.",
+      description: "Plataforma desarrollada para la administración y gestión de infracciones realizadas por cámaras de fotomultas. Permite validar la veracidad de las mismas, asignarlas como verificadas o rechazadas por el agente de tránsito, y administrar el despliegue de cámaras y su asignación.",
       git: "",
       img: [photoDetectionLogin, photoDetectionhome, photoDetectionhome1],
       tecnologies: ["Angular 18", "Module Federation", "Compodoc", "Jest"],
@@ -87,7 +87,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       img: [ticketsHome, ticketsCreate, ticketsList],
       git: "",
       link: null,
-      description: "Plataforma desarrollada para la administracion y gestion de tickets, la cual tiene la finalidad de poder validar la veracidad de las mismas, dando la opcion de asignar como verificada o rechazda por el agente de transito, ademas de poder administrar de manera completa el despliegue de las camaras, su asignacion entre uchas otras tareas.",
+      description: "Sistema de gestión de tickets desarrollado con React y Firebase. Permite la creación, asignación, seguimiento y cierre de incidencias, con autenticación de usuarios y almacenamiento en tiempo real.",
     },
     {
       id: 5,
@@ -95,7 +95,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       tecnologies: ['Python 3.12', 'TensorFlow', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SciPy', 'OpenCV', 'Jupyter Notebook'],
       img: [ml, ml1, ml2, ml3],
       git: 'https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git',
-      link: [{ name: "Repo", url: "https://github.com/desingkuro/tesla-landing-copy.git" }],
+      link: [{ name: "Repo", url: "https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git" }],
       description: 'Trabajo Final ML — Clasificación de caracteres japoneses, Objetivo: Clasificar imágenes 28x28 de 10 caracteres hiragana.caracteresjaponeses/TrabajoFinalML.ipynb caracteresjaponeses/test_data.csv (10,000 filas; columnas: Unnamed: 0, label, pixeles 0..783).',
     }
   ];

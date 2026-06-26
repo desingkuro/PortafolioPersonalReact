@@ -1,7 +1,7 @@
 import SkillCell from "../../shared/components/SkillCell";
 import { useContext } from "react";
 import { type SkillsInterface } from "../../shared/interfaces/contextInterfaces";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { contextoPrincipal } from "../../shared/providers/context/contexto";
 
 export default function Skills() {

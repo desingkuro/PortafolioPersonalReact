@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Btn from "../../shared/components/Btn";
 
 export default function NotFoundPage() {

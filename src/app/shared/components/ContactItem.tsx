@@ -1,6 +1,6 @@
 import type { SocialMediaProps } from "./SocialMedia";
 import SocialMedia from "./SocialMedia";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export interface ContactItemProps {
     socialMedia?: SocialMediaProps[] | null;
