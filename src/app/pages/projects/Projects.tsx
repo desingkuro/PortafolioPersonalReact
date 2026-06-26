@@ -2,12 +2,17 @@ import ProjectCard from "../../shared/components/ProjectCard"
 import { useContext, useState } from "react"
 import { contextoPrincipal } from "../../shared/providers/context/contexto"
 import { motion } from "motion/react"
+import SEOHelmet from "../../shared/components/SEOHelmet"
 
 export default function Projects() {
     const { projects } = useContext(contextoPrincipal)
     const [loadimage, setLoadimage] = useState<boolean>(false)
     return (
         <div className="w-full flex flex-col !px-2">
+            <SEOHelmet
+                title="Proyectos"
+                description="Explora los proyectos de Andrés Licona: App PUC, Foto Detección, Tickets, Tesla Landing Page y Machine Learning."
+            />
             <header className="w-full flex flex-row items-center justify-center h-[80px] gap-2">
                 <p className="text-[3rem] neue-machina-ultraBold">My</p>
                 <p className="text-[3rem] gallery font-bold">Projects</p>

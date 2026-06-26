@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Btn from "../../shared/components/Btn";
+import SEOHelmet from "../../shared/components/SEOHelmet";
 
 export default function NotFoundPage() {
     return (
@@ -15,8 +16,10 @@ export default function NotFoundPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
         >
-            {/* Si tienes una clase para tu fondo, sustitúyela por bg-black arriba */}
-            {/* Círculo/halo animado de fondo */}
+            <SEOHelmet
+                title="Página no encontrada"
+                description="La página que buscas no existe. Regresa al inicio para conocer el portfolio de Andrés Licona."
+            />
             <motion.div
                 className="pointer-events-none absolute -top-32 -right-32 w-80 h-80 rounded-full bg-white/5 blur-3xl"
                 initial={{ scale: 0.7, opacity: 0 }}
@@ -24,7 +27,6 @@ export default function NotFoundPage() {
                 transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             />
 
-            {/* Contenido principal */}
             <section className="relative z-10 flex flex-col items-center text-center !px-4">
                 <motion.p
                     className="text-sm tracking-[0.3em] uppercase !mb-4 text-white/60"

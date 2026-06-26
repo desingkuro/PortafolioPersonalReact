@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Btn from "../../shared/components/Btn";
+import SEOHelmet from "../../shared/components/SEOHelmet";
 
 export default function Home() {
   return (
@@ -9,6 +10,10 @@ export default function Home() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
+      <SEOHelmet
+        title="Inicio"
+        description="Andrés Licona Machado — Desarrollador Full Stack. Portfolio personal con proyectos, habilidades y experiencia en React, Angular, TypeScript y más."
+      />
       <main className="h-[80%] w-full flex items-center justify-center flex-col">
         <section
           className="
@@ -31,9 +36,9 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="text-[2.5rem] sm:text-[4rem] neue-machina-ultraBold">
+            <h1 className="text-[2.5rem] sm:text-[4rem] neue-machina-ultraBold">
               Andrés
-            </p>
+            </h1>
 
             <div className="w-[60px] relative flex justify-end max-500">
               <motion.span

@@ -6,15 +6,19 @@ import { useNavigate } from "react-router"
 import { motion } from "motion/react"
 import ProjectCarousel from "../../shared/components/ProjectCarrucel"
 import SectionDetail from "../../shared/components/SectionDetail"
+import SEOHelmet from "../../shared/components/SEOHelmet"
 
 export default function DetailProject() {
     const navigate = useNavigate()
     const { id } = useParams()
     const { projects } = useContext(contextoPrincipal)
     const project = projects.find((project) => project.id === Number(id))
+    const projectTitle = project?.title || "Proyecto no encontrado"
+    const projectDescription = project?.description?.slice(0, 160) || "Detalle del proyecto de Andrés Licona."
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
+            <SEOHelmet title={projectTitle} description={projectDescription} />
             <div className=" flex w-[90%] flex-col gap-4">
                 <BiArrowBack
                     onClick={() => navigate("/projects")}
@@ -30,7 +34,7 @@ export default function DetailProject() {
                     <ProjectCarousel project={project!} />
                 </motion.header>
                 <main className="w-full flex flex-col justify-center !pt-6 !pb-12">
-                    <h1 className="text-[3rem] neue-machina-ultraBold">{project?.title}</h1>
+                    <h1 className="text-[3rem] neue-machina-ultraBold">{projectTitle}</h1>
                     <section className="flex flex-wrap gap-4 md:w-[90%] sm:w-[95%] !py-2 min-w-[300px] items-center">
                         <p>{project?.description}</p>
                     </section>

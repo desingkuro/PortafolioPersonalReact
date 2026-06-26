@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { motion } from "motion/react";
 import { contextoPrincipal } from "../../shared/providers/context/contexto";
 import type { SkillsInterface, DataBlock, EducationItem } from "../../shared/interfaces/contextInterfaces";
+import SEOHelmet from "../../shared/components/SEOHelmet";
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -30,8 +31,11 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
         >
+            <SEOHelmet
+                title="Sobre mí"
+                description="Conoce más sobre Andrés Licona, desarrollador Full Stack. Formación en Ingeniería de Sistemas y cursos especializados en desarrollo web."
+            />
             <div className="w-full max-w-5xl !space-y-10">
-                {/* Card: Más sobre mí */}
                 <motion.section
                     className="
                         relative
@@ -54,9 +58,9 @@ export default function AboutPage() {
                             <span className="text-lg">✦</span>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                             Full Stack Developer
-                        </h2>
+                        </h1>
 
                         <p className="max-w-3xl text-sm sm:text-base text-white/70">
                             Desarrollador enfocado en crear interfaces limpias, fluidas y
@@ -67,7 +71,6 @@ export default function AboutPage() {
                     </motion.div>
                 </motion.section>
 
-                {/* Skills */}
                 <motion.section
                     className="
                         rounded-3xl border border-white/10
@@ -83,7 +86,7 @@ export default function AboutPage() {
                         className="flex items-center justify-between !mb-4"
                         variants={itemVariants}
                     >
-                        <h3 className="text-lg sm:text-xl font-semibold">Stack principal</h3>
+                        <h2 className="text-lg sm:text-xl font-semibold">Stack principal</h2>
                         <span className="text-xs sm:text-sm text-white/50">
                             Herramientas que uso a diario
                         </span>
@@ -116,7 +119,6 @@ export default function AboutPage() {
                     </motion.div>
                 </motion.section>
 
-                {/* Formaciones + Cursos */}
                 <motion.section
                     className="
                         rounded-3xl border border-white/10
@@ -132,11 +134,10 @@ export default function AboutPage() {
                         className="grid grid-cols-1 md:grid-cols-2 !gap-8"
                         variants={containerVariants}
                     >
-                        {/* Formaciones */}
                         <motion.div variants={itemVariants}>
-                            <h3 className="text-lg sm:text-2xl font-semibold !mb-4">
+                            <h2 className="text-lg sm:text-2xl font-semibold !mb-4">
                                 Formaciones
-                            </h3>
+                            </h2>
                             <ul className="!space-y-4 text-sm sm:text-base">
                                 {aboutBlock?.items.map((item: EducationItem) => (
                                     <li key={item.title}>
@@ -152,11 +153,10 @@ export default function AboutPage() {
                             </ul>
                         </motion.div>
 
-                        {/* Cursos */}
                         <motion.div variants={itemVariants}>
-                            <h3 className="text-lg sm:text-2xl font-semibold !mb-4">
+                            <h2 className="text-lg sm:text-2xl font-semibold !mb-4">
                                 Cursos
-                            </h3>
+                            </h2>
                             <ul className="!space-y-4 text-sm sm:text-base max-h-[380px] md:max-h-none overflow-y-auto !pr-1">
                                 {coursesBlock?.items.map((item: EducationItem) => (
                                     <li key={item.title}>
