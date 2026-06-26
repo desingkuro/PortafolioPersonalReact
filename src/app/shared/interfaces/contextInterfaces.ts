@@ -16,15 +16,21 @@ export interface SkillsInterface {
     color: string;
 }
 
-export interface DataInterface {
+export interface EducationItem {
+    title: string;
+    institution: string;
+    date: string;
+}
+
+export interface DataBlock {
     type: string;
-    items: any[];
+    items: EducationItem[];
 }
 
 export interface ContextoPrincipal {
     projects: ProjectsInterface[];
-    skills: any[];
-    data: any[];
+    skills: SkillsInterface[];
+    data: DataBlock[];
     contactItems: ContactItemProps[];
 }
 

@@ -1,8 +1,7 @@
 import ProjectCard from "../../shared/components/ProjectCard"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { contextoPrincipal } from "../../shared/providers/context/contexto"
 import { motion } from "motion/react"
-import { useState } from "react"
 
 export default function Projects() {
     const { projects } = useContext(contextoPrincipal)

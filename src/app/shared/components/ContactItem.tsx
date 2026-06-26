@@ -35,10 +35,10 @@ export default function ContactItem({ socialMedia, firstText, secondText, icon, 
                 </p>
                 <div className="w-full flex items-center justify-start flex-wrap">
                     {
-                        socialMedia !== null && socialMedia?.map((socialMedia: SocialMediaProps, index: number) => {
+                        socialMedia !== null && socialMedia?.map((socialMedia: SocialMediaProps) => {
                             return (
                                 <SocialMedia
-                                    key={index}
+                                    key={socialMedia.name}
                                     url={socialMedia.url}
                                     icon={socialMedia.icon}
                                     name={socialMedia.name}

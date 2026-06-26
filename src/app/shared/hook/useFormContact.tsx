@@ -1,4 +1,4 @@
-import { useForm, type FieldValues } from "react-hook-form";
+import { useForm, type UseFormReturn, type FieldValues } from "react-hook-form";
 import { useState } from "react";
 
 export interface FormContactData {
@@ -9,9 +9,9 @@ export interface FormContactData {
 }
 
 export interface UseFormContactReturn {
-    register: any;
+    register: UseFormReturn<FormContactData>["register"];
     handleSubmit: (onSubmit: (data: FormContactData) => Promise<void>) => (e: React.FormEvent) => Promise<void>;
-    formState: any;
+    formState: UseFormReturn<FormContactData>["formState"];
     reset: () => void;
     isSubmitting: boolean;
     submitSuccess: boolean;
@@ -46,14 +46,13 @@ export default function useFormContact(): UseFormContactReturn {
                 setSubmitSuccess(true);
                 reset();
 
-                // Limpiar mensaje de éxito después de 5 segundos
                 setTimeout(() => {
                     setSubmitSuccess(false);
                 }, 5000);
-            } catch (error: any) {
-                setSubmitError(error.message || "Ocurrió un error al enviar el mensaje");
+            } catch (error: unknown) {
+                const message = error instanceof Error ? error.message : "Ocurrió un error al enviar el mensaje";
+                setSubmitError(message);
 
-                // Limpiar mensaje de error después de 5 segundos
                 setTimeout(() => {
                     setSubmitError(null);
                 }, 5000);

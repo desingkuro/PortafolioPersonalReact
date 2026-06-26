@@ -32,7 +32,7 @@ export default function Skills() {
                 {/* Celdas */}
                 {skills.map((skill: SkillsInterface, index: number) => (
                     <motion.div
-                        key={index}
+                        key={skill.nombre}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: index * 0.2 }}

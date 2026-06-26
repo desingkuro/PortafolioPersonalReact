@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { motion } from "motion/react";
 import { contextoPrincipal } from "../../shared/providers/context/contexto";
+import type { SkillsInterface, DataBlock, EducationItem } from "../../shared/interfaces/contextInterfaces";
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,8 +20,8 @@ const itemVariants = {
 export default function AboutPage() {
     const { skills, data } = useContext(contextoPrincipal);
 
-    const aboutBlock = data.find((block: any) => block.type === "Formaciones");
-    const coursesBlock = data.find((block: any) => block.type === "Cursos");
+    const aboutBlock = data.find((block: DataBlock) => block.type === "Formaciones");
+    const coursesBlock = data.find((block: DataBlock) => block.type === "Cursos");
 
     return (
         <motion.main
@@ -96,9 +97,9 @@ export default function AboutPage() {
                         "
                         variants={containerVariants}
                     >
-                        {skills.map((skill: any, index: number) => (
+                        {skills.map((skill: SkillsInterface) => (
                             <div
-                                key={skill.nombre + index}
+                                key={skill.nombre}
 
                                 className="
                                     flex flex-col items-start justify-between
@@ -137,8 +138,8 @@ export default function AboutPage() {
                                 Formaciones
                             </h3>
                             <ul className="!space-y-4 text-sm sm:text-base">
-                                {aboutBlock?.items.map((item: any, idx: number) => (
-                                    <li key={item.title + idx}>
+                                {aboutBlock?.items.map((item: EducationItem) => (
+                                    <li key={item.title}>
                                         <p className="font-medium">{item.title}</p>
                                         <p className="text-purple-300 text-sm">
                                             {item.institution}
@@ -157,8 +158,8 @@ export default function AboutPage() {
                                 Cursos
                             </h3>
                             <ul className="!space-y-4 text-sm sm:text-base max-h-[380px] md:max-h-none overflow-y-auto !pr-1">
-                                {coursesBlock?.items.map((item: any, idx: number) => (
-                                    <li key={item.title + idx}>
+                                {coursesBlock?.items.map((item: EducationItem) => (
+                                    <li key={item.title}>
                                         <p className="font-medium">{item.title}</p>
                                         <p className="text-purple-300 text-sm">
                                             {item.institution}

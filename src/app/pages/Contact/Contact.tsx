@@ -24,7 +24,7 @@ export default function Contact() {
                             contactItems.map((contactItem: ContactItemProps, index) => {
                                 return (
                                     <ContactItem
-                                        key={index}
+                                        key={contactItem.firstText}
                                         socialMedia={contactItem.socialMedia}
                                         firstText={contactItem.firstText}
                                         secondText={contactItem.secondText}

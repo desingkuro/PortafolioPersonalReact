@@ -30,7 +30,7 @@ import { BiLike } from "react-icons/bi";
 
 import { SiNestjs } from "react-icons/si";
 import type { ContactItemProps } from "../../components/ContactItem";
-import type { ContextoPrincipal, ContextoProveedorProps, ProjectsInterface, SkillsInterface } from "../../interfaces/contextInterfaces";
+import type { ContextoPrincipal, ContextoProveedorProps, ProjectsInterface, SkillsInterface, DataBlock } from "../../interfaces/contextInterfaces";
 
 export const contextoPrincipal = createContext<ContextoPrincipal>({
   projects: [],
@@ -191,7 +191,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
     },
   ];
 
-  const data = [
+  const data: DataBlock[] = [
     {
       type: "Formaciones",
       items: [

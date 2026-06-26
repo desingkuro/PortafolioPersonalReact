@@ -3,17 +3,18 @@ import type { ProjectsInterface } from "../interfaces/contextInterfaces";
 
 export default function ProjectCarousel({ project }: { project: ProjectsInterface }) {
     const [current, setCurrent] = useState(0);
-    const timeoutRef = useRef<any | null>(null);
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const images = project?.img || [];
 
-    // Autoplay cada 3 segundos
     useEffect(() => {
         if (!images.length) return;
-        timeoutRef.current = setTimeout(() => {
+        intervalRef.current = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
         }, 3000);
-        return () => clearTimeout(timeoutRef.current);
-    }, [current, images.length]);
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [images.length]);
 
     return (
         <figure
@@ -31,7 +32,7 @@ export default function ProjectCarousel({ project }: { project: ProjectsInterfac
                 />
             ))}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {images.map((_:string, idx:number) => (
+                {images.map((_: string, idx: number) => (
                     <span key={idx} className={`w-3 h-3 rounded-full bg-white/60 ${idx === current ? "bg-black/90" : ""}`}></span>
                 ))}
             </div>
