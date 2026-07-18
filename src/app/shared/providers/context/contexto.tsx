@@ -14,6 +14,9 @@ import ml from "../../../../assets/img/projects/ML/image.png"
 import ml1 from "../../../../assets/img/projects/ML/image1.png"
 import ml2 from "../../../../assets/img/projects/ML/image2.png"
 import ml3 from "../../../../assets/img/projects/ML/image3.png"
+import memoryImg from "../../../../assets/img/projects/MemoryGame/img.png"
+import memoryImg2 from "../../../../assets/img/projects/MemoryGame/img2.png"
+import memoryImg3 from "../../../../assets/img/projects/MemoryGame/img3.png"
 
 import {
   FaWhatsapp,
@@ -90,6 +93,18 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       git: 'https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git',
       link: [{ name: "Repo", url: "https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git" }],
       description: 'Trabajo Final ML — Clasificación de caracteres japoneses, Objetivo: Clasificar imágenes 28x28 de 10 caracteres hiragana.caracteresjaponeses/TrabajoFinalML.ipynb caracteresjaponeses/test_data.csv (10,000 filas; columnas: Unnamed: 0, label, pixeles 0..783).',
+    },
+    {
+      id: 6,
+      title: "Memory Game — Rick & Morty",
+      tecnologies: ["React", "TypeScript", "CSS Animations", "Rick and Morty API"],
+      img: [memoryImg, memoryImg2, memoryImg3],
+      git: "https://github.com/desingkuro/Memory-Game.git",
+      link: [
+        { name: "Page", url: "https://memorygamerickandmorty.netlify.app/" },
+        { name: "Repo", url: "https://github.com/desingkuro/Memory-Game.git" }
+      ],
+      description: "Juego de memoria temático de Rick and Morty. consume la API pública de Rick and Morty para obtener personajes, los voltea aleatoriamente y el jugador debe encontrar las parejas. Implementa animaciones 3D de card-flip, contador de movimientos y temporizador.",
     }
   ];
 
