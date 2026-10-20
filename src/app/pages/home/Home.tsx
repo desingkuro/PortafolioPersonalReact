@@ -8,7 +8,7 @@ export default function Home() {
       className="w-full h-full flex items-center justify-center !px-4 sm:!px-0 overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
       <SEOHelmet
         title="Inicio"

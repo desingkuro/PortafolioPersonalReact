@@ -7,7 +7,7 @@ export default function LayoutMain() {
         <div className="w-full h-screen bg-primary">
             <BackGroundImage>
                 <Header />
-                <main className="flex-1 overflow-y-auto">
+                <main className="flex-1 overflow-y-auto scroll-smooth">
                     <Outlet />
                 </main>
             </BackGroundImage>

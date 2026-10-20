@@ -22,14 +22,23 @@ export default function SectionDetail({
     const typeReturnItems = {
         "links": (listItems as LinkItem[]).map((item: LinkItem) => {
             return (
-                <a href={item.url} className="cursor-pointer transition-all ease-in-out duration-300" target="_blank" rel="noopener noreferrer" key={item.name}>
-                    <Tag type="links" >{item.name}</Tag>
-                </a>
+                <li key={item.name}>
+                    <a
+                        href={item.url}
+                        className="inline-block cursor-pointer transition-all ease-in-out duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Tag type="links">{item.name}</Tag>
+                    </a>
+                </li>
             )
         }),
         "tecnologies": (listItems as string[]).map((item: string) => {
             return (
-                <Tag type="tecnology" className="text-[1rem] neue-machina-ultraBold" key={item}>{item}</Tag>
+                <li key={item}>
+                    <Tag type="tecnology" className="text-[1rem] neue-machina-ultraBold">{item}</Tag>
+                </li>
             )
         }),
         "text": <p>{text}</p>,
@@ -37,7 +46,7 @@ export default function SectionDetail({
 
     return (
         <section className="flex flex-wrap flex-col gap-4 md:w-[90%] sm:w-[95%] py-2 min-w-[300px] !mb-4">
-            <p className="text-[2rem] neue-machina-ultraBold">{title}</p>
+            <h2 className="text-[2rem] neue-machina-ultraBold">{title}</h2>
             {type === "text" ? typeReturnItems[type] : <ul className="flex flex-wrap gap-2">{typeReturnItems[type]}</ul>}
         </section>
     )

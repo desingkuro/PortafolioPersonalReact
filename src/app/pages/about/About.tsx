@@ -52,7 +52,7 @@ export default function AboutPage() {
                         className="flex flex-col items-center text-center !space-y-4"
                         variants={itemVariants}
                     >
-                        <div className="flex items-center !gap-3 text-sm tracking-[0.25em] uppercase text-purple-300/80">
+                        <div className="flex items-center !gap-3 text-sm tracking-[0.25em] uppercase text-[#ff8a8a]">
                             <span className="text-lg">✦</span>
                             <span>Más sobre mí</span>
                             <span className="text-lg">✦</span>
@@ -63,10 +63,12 @@ export default function AboutPage() {
                         </h1>
 
                         <p className="max-w-3xl text-sm sm:text-base text-white/70">
-                            Desarrollador enfocado en crear interfaces limpias, fluidas y
-                            performantes, cuidando tanto la experiencia visual como la
-                            arquitectura del código. Me interesa especialmente el ecosistema
-                            JavaScript/TypeScript y la construcción de productos con impacto.
+                            Desarrollador Full-Stack con más de 2 años de experiencia
+                            construyendo aplicaciones web escalables con Angular, React y
+                            NestJS. Especializado en APIs RESTful, arquitecturas de
+                            microservicios y mensajería asíncrona con RabbitMQ, con base
+                            sólida en PostgreSQL y Firebase. Enfocado en código mantenible,
+                            buenas prácticas y soluciones alineadas con el negocio.
                         </p>
                     </motion.div>
                 </motion.section>
