@@ -17,7 +17,7 @@ import ml3 from "../../../../assets/img/projects/ML/image3.png"
 import memoryImg from "../../../../assets/img/projects/MemoryGame/img.png"
 import memoryImg2 from "../../../../assets/img/projects/MemoryGame/img2.png"
 import memoryImg3 from "../../../../assets/img/projects/MemoryGame/img3.png"
-import auraMain from "../../../../assets/img/projects/Aura/aura-main.png"
+import auraMain from "../../../../assets/img/projects/Aura/aura-main.webp"
 
 import {
   FaWhatsapp,
