@@ -17,6 +17,7 @@ import ml3 from "../../../../assets/img/projects/ML/image3.png"
 import memoryImg from "../../../../assets/img/projects/MemoryGame/img.png"
 import memoryImg2 from "../../../../assets/img/projects/MemoryGame/img2.png"
 import memoryImg3 from "../../../../assets/img/projects/MemoryGame/img3.png"
+import auraMain from "../../../../assets/img/projects/Aura/aura-main.png"
 
 import {
   FaWhatsapp,
@@ -44,7 +45,7 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
   const projects: ProjectsInterface[] = [
     {
       id: 1,
-      title: "App Puc (Plan unico de cuentas)",
+      title: "App PUC — Plan Único de Cuentas",
       tecnologies: ["React Native"],
       img: [pucPlayStore,pucDetail,pucPage],
       git: "https://github.com/desingkuro/puc.git",
@@ -55,26 +56,34 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
         { name: "Repositorio", url: "https://github.com/desingkuro/puc" }
       ],
       description:
-        "App móvil desarrollada en React Native para realizar búsquedas de cuentas o códigos de contabilidad. Enfocada en el aprendizaje de los estudiantes en proceso de formación en tecnicos enfocados en contabilidad.",
+        "App móvil desarrollada en React Native para consultar cuentas y códigos del Plan Único de Cuentas (PUC). Diseñada para apoyar el aprendizaje de estudiantes de contabilidad.",
+      category: "project",
     },
     {
       id: 2,
-      title: "Foto Detección",
-      description: "Plataforma desarrollada para la administración y gestión de infracciones realizadas por cámaras de fotomultas. Permite validar la veracidad de las mismas, asignarlas como verificadas o rechazadas por el agente de tránsito, y administrar el despliegue de cámaras y su asignación.",
+      title: "FotoMulta",
+      description: "Plataforma para administrar y gestionar las infracciones detectadas por cámaras de fotomultas. Permite validar la veracidad de cada infracción, marcarla como verificada o rechazada por el agente de tránsito y administrar el despliegue de cámaras y su asignación.",
       git: "",
       img: [photoDetectionLogin, photoDetectionhome, photoDetectionhome1],
       tecnologies: ["Angular 18", "Module Federation", "Compodoc", "Jest"],
-      link: null
+      link: null,
+      category: "experience",
+      experience: {
+        company: "ServiConnect",
+        role: "Desarrollador Full-Stack",
+        period: "Nov 2023 — Sep 2025",
+      },
     },
     {
       id: 3,
-      title: "Landin page de Tesla",
+      title: "Landing page de Tesla",
       tecnologies: ["Astro", "HTML", "Tailwind", "TypeScript"],
       img: [tesla],
       git: "https://github.com/desingkuro/tesla-landing-copy.git",
       link: [{ name: "Page", url: "https://tesla-landing-copy.netlify.app/", }, { name: "Repo", url: "https://github.com/desingkuro/tesla-landing-copy.git" }],
       description:
-        "Landing Page basada en la página oficial de Tesla y midudev.",
+        "Landing page inspirada en la página oficial de Tesla, construida con Astro, Tailwind CSS y TypeScript.",
+      category: "project",
     },
     {
       id: 4,
@@ -84,6 +93,12 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       git: "",
       link: null,
       description: "Sistema de gestión de tickets desarrollado con React y Firebase. Permite la creación, asignación, seguimiento y cierre de incidencias, con autenticación de usuarios y almacenamiento en tiempo real.",
+      category: "experience",
+      experience: {
+        company: "ServiConnect",
+        role: "Desarrollador Full-Stack",
+        period: "Nov 2023 — Sep 2025",
+      },
     },
     {
       id: 5,
@@ -92,7 +107,8 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
       img: [ml, ml1, ml2, ml3],
       git: 'https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git',
       link: [{ name: "Repo", url: "https://github.com/desingkuro/ML-Python-Analicis-de-caracteres-japoneses.git" }],
-      description: 'Trabajo Final ML — Clasificación de caracteres japoneses, Objetivo: Clasificar imágenes 28x28 de 10 caracteres hiragana.caracteresjaponeses/TrabajoFinalML.ipynb caracteresjaponeses/test_data.csv (10,000 filas; columnas: Unnamed: 0, label, pixeles 0..783).',
+      description: 'Trabajo final de Machine Learning: clasificación de 10 caracteres hiragana a partir de imágenes de 28×28 píxeles. Incluye análisis exploratorio, preprocesamiento y entrenamiento de modelos con Python, TensorFlow y Scikit-learn.',
+      category: "project",
     },
     {
       id: 6,
@@ -104,7 +120,20 @@ export function ContextoProveedor({ children }: ContextoProveedorProps) {
         { name: "Page", url: "https://memorygamerickandmorty.netlify.app/" },
         { name: "Repo", url: "https://github.com/desingkuro/Memory-Game.git" }
       ],
-      description: "Juego de memoria temático de Rick and Morty. consume la API pública de Rick and Morty para obtener personajes, los voltea aleatoriamente y el jugador debe encontrar las parejas. Implementa animaciones 3D de card-flip, contador de movimientos y temporizador.",
+      description: "Juego de memoria temático de Rick and Morty. Consume la API pública de la serie para obtener personajes, los voltea aleatoriamente y el jugador debe encontrar las parejas. Incluye animaciones 3D de card-flip, contador de movimientos y temporizador.",
+      category: "project",
+    },
+    {
+      id: 7,
+      title: "Aura SDDM Manager",
+      tecnologies: ["Kotlin", "Compose Multiplatform", "Gradle KTS", "Clean Architecture", "PolicyKit"],
+      img: [auraMain],
+      git: "https://github.com/desingkuro/Aura-SDDM-Manager.git",
+      link: [
+        { name: "Repo", url: "https://github.com/desingkuro/Aura-SDDM-Manager" }
+      ],
+      description: "Aplicación de escritorio para Linux que permite gestionar los fondos de pantalla de SDDM. Importa imágenes y videos, genera miniaturas con ffmpeg, previsualiza el tema con sddm-greeter y aplica el fondo con permisos de administrador mediante pkexec. Incluye respaldos automáticos y restauración de la configuración anterior.",
+      category: "project",
     }
   ];
 

@@ -1,5 +1,13 @@
 import type { ContactItemProps } from "../components/ContactItem";
 
+export type ProjectCategory = "project" | "experience";
+
+export interface ExperienceMeta {
+    company: string;
+    role: string;
+    period: string;
+}
+
 export interface ProjectsInterface {
     id: number;
     title: string;
@@ -8,6 +16,8 @@ export interface ProjectsInterface {
     git?: string;
     link?: { name: string, url: string }[] | null;
     description: string;
+    category: ProjectCategory;
+    experience?: ExperienceMeta;
 }
 
 export interface SkillsInterface {
