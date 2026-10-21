@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Btn from "../../shared/components/Btn";
+import DownloadCV from "../../shared/components/DownloadCV";
 import SEOHelmet from "../../shared/components/SEOHelmet";
 
 export default function Home() {
@@ -74,7 +75,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="h-[30%] w-full flex items-center justify-center">
+        <section className="h-[30%] w-full flex flex-wrap items-center justify-center !gap-3 !px-4">
           <motion.div
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.97 }}
@@ -83,6 +84,14 @@ export default function Home() {
             <Btn type="home" route="/about">
               About me
             </Btn>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 260, damping: 18 }}
+          >
+            <DownloadCV variant="button" />
           </motion.div>
         </section>
       </main>

@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { contextoPrincipal } from "../../shared/providers/context/context";
 import type { SkillsInterface, DataBlock, EducationItem } from "../../shared/interfaces/contextInterfaces";
 import SEOHelmet from "../../shared/components/SEOHelmet";
+import DownloadCV from "../../shared/components/DownloadCV";
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -175,6 +176,14 @@ export default function AboutPage() {
                         </motion.div>
                     </motion.div>
                 </motion.section>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                >
+                    <DownloadCV />
+                </motion.div>
             </div>
         </motion.main>
     );
