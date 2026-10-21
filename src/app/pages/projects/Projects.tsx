@@ -1,4 +1,5 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
+import { useLocation } from "react-router"
 import { motion } from "motion/react"
 import ProjectCard from "../../shared/components/ProjectCard"
 import SEOHelmet from "../../shared/components/SEOHelmet"
@@ -55,8 +56,26 @@ function ProjectGrid({ items, featureFirst = false }: { items: ProjectsInterface
 
 export default function Projects() {
     const { projects } = useContext(contextoPrincipal)
+    const { hash } = useLocation()
     const experience = projects.filter((project) => project.category === "experience")
     const personalProjects = projects.filter((project) => project.category === "project")
+
+    useEffect(() => {
+        if (!hash) return
+
+        const target = document.getElementById(hash.slice(1))
+        if (!target) return
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        const timer = window.setTimeout(() => {
+            target.scrollIntoView({
+                behavior: reduceMotion ? "auto" : "smooth",
+                block: "start",
+            })
+        }, 60)
+
+        return () => window.clearTimeout(timer)
+    }, [hash])
 
     return (
         <div className="w-full flex flex-col !px-3 sm:!px-6 !pb-20">

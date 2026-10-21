@@ -1,7 +1,8 @@
 import { useContext } from "react";
+import { Link } from "react-router";
 import { motion } from "motion/react";
 import { contextoPrincipal } from "../../shared/providers/context/context";
-import type { SkillsInterface, DataBlock, EducationItem } from "../../shared/interfaces/contextInterfaces";
+import type { SkillsInterface, DataBlock, EducationItem, ProjectsInterface } from "../../shared/interfaces/contextInterfaces";
 import SEOHelmet from "../../shared/components/SEOHelmet";
 import DownloadCV from "../../shared/components/DownloadCV";
 
@@ -20,10 +21,17 @@ const itemVariants = {
 };
 
 export default function AboutPage() {
-    const { skills, data } = useContext(contextoPrincipal);
+    const { skills, data, projects } = useContext(contextoPrincipal);
 
     const aboutBlock = data.find((block: DataBlock) => block.type === "Formaciones");
     const coursesBlock = data.find((block: DataBlock) => block.type === "Cursos");
+    const experienceProjects = projects.filter(
+        (project: ProjectsInterface) => project.category === "experience"
+    );
+    const personalProjects = projects.filter(
+        (project: ProjectsInterface) => project.category === "project"
+    );
+    const experienceMeta = experienceProjects[0]?.experience;
 
     return (
         <motion.main
@@ -34,7 +42,7 @@ export default function AboutPage() {
         >
             <SEOHelmet
                 title="Sobre mí"
-                description="Conoce más sobre Andrés Licona, desarrollador Full Stack. Formación en Ingeniería de Sistemas y cursos especializados en desarrollo web."
+                description="Conoce la experiencia laboral de Andrés Licona en ServiConnect, sus proyectos personales, formación y habilidades como desarrollador Full Stack."
             />
             <div className="w-full max-w-5xl !space-y-10">
                 <motion.section
@@ -71,6 +79,235 @@ export default function AboutPage() {
                             sólida en PostgreSQL y Firebase. Enfocado en código mantenible,
                             buenas prácticas y soluciones alineadas con el negocio.
                         </p>
+                    </motion.div>
+                </motion.section>
+
+                {experienceMeta && (
+                    <motion.section
+                        id="experiencia"
+                        aria-labelledby="about-experiencia-title"
+                        className="
+                            scroll-mt-24 rounded-3xl border border-white/10
+                            bg-white/5 backdrop-blur-md
+                            !px-5 sm:!px-8 !py-6
+                            shadow-xl
+                        "
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        <motion.header
+                            className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"
+                            variants={itemVariants}
+                        >
+                            <div>
+                                <p className="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-[#ff5555]">
+                                    Trayectoria
+                                </p>
+                                <h2
+                                    id="about-experiencia-title"
+                                    className="!mt-1 text-lg font-semibold sm:text-2xl"
+                                >
+                                    Experiencia laboral
+                                </h2>
+                                <p className="!mt-1 max-w-2xl text-sm text-white/55">
+                                    Mi etapa profesional en ServiConnect, desarrollando
+                                    productos para la gestión de infracciones y el soporte
+                                    operativo.
+                                </p>
+                            </div>
+                            <Link
+                                to="/projects#experiencia"
+                                className="group inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#ff8a8a] transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414]"
+                            >
+                                Ver experiencia completa
+                                <span
+                                    aria-hidden="true"
+                                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                                >
+                                    →
+                                </span>
+                            </Link>
+                        </motion.header>
+
+                        <div className="relative !mt-6 !border-l !border-white/10 !pl-6 sm:!pl-8">
+                            <span
+                                aria-hidden="true"
+                                className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#ff5555] ring-4 ring-[#ff5555]/15"
+                            />
+                            <motion.div variants={itemVariants}>
+                                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                                    <div>
+                                        <h3 className="text-base font-semibold sm:text-lg">
+                                            {experienceMeta.company}
+                                        </h3>
+                                        <p className="text-sm text-[#ff8a8a]">
+                                            {experienceMeta.role}
+                                        </p>
+                                    </div>
+                                    <p className="text-xs text-white/45 sm:text-sm">
+                                        {experienceMeta.period}
+                                    </p>
+                                </div>
+
+                                <p className="!mt-3 max-w-3xl text-sm text-white/65">
+                                    Desarrollé interfaces y servicios para FotoMulta
+                                    (Angular) y Tickets (React), cubriendo estado global,
+                                    autenticación y sincronización en tiempo real. También
+                                    participé en PCentral (NestJS, RabbitMQ y PostgreSQL),
+                                    aportando a la capa de APIs y persistencia.
+                                </p>
+
+                                <ul className="!mt-4 grid gap-3 sm:grid-cols-2">
+                                    {experienceProjects.map((project: ProjectsInterface) => (
+                                        <li key={project.id}>
+                                            <Link
+                                                to={`/projects/${project.id}`}
+                                                className="
+                                                    group flex h-full flex-col rounded-2xl
+                                                    border border-white/10 bg-black/25 !p-4
+                                                    transition-colors duration-200
+                                                    hover:border-[#ff5555]/40 hover:bg-black/40
+                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white
+                                                    focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414]
+                                                "
+                                            >
+                                                <span className="flex items-start justify-between gap-2">
+                                                    <span className="font-medium">
+                                                        {project.title}
+                                                    </span>
+                                                    <span
+                                                        aria-hidden="true"
+                                                        className="text-[#ff8a8a] transition-transform duration-200 group-hover:translate-x-0.5"
+                                                    >
+                                                        →
+                                                    </span>
+                                                </span>
+                                                <span className="!mt-1 line-clamp-2 text-xs leading-relaxed text-white/55">
+                                                    {project.description}
+                                                </span>
+                                                <span className="!mt-3 flex flex-wrap gap-1.5">
+                                                    {project.tecnologies
+                                                        .slice(0, 3)
+                                                        .map((tech: string) => (
+                                                            <span
+                                                                key={tech}
+                                                                className="rounded-full border border-white/10 bg-white/5 !px-2.5 !py-0.5 text-[0.65rem] text-white/55"
+                                                            >
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </div>
+                    </motion.section>
+                )}
+
+                <motion.section
+                    id="proyectos"
+                    aria-labelledby="about-proyectos-title"
+                    className="
+                        scroll-mt-24 rounded-3xl border border-white/10
+                        bg-white/5 backdrop-blur-md
+                        !px-5 sm:!px-8 !py-6
+                        shadow-xl
+                    "
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                >
+                    <motion.header
+                        className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"
+                        variants={itemVariants}
+                    >
+                        <div>
+                            <p className="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-[#ff5555]">
+                                Selección personal
+                            </p>
+                            <h2
+                                id="about-proyectos-title"
+                                className="!mt-1 text-lg font-semibold sm:text-2xl"
+                            >
+                                Proyectos personales
+                            </h2>
+                            <p className="!mt-1 max-w-2xl text-sm text-white/55">
+                                Aplicaciones que he construido de principio a fin para
+                                explorar móvil, web, machine learning y escritorio.
+                            </p>
+                        </div>
+                        <Link
+                            to="/projects#proyectos"
+                            className="group inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#ff8a8a] transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414]"
+                        >
+                            Ver todos los proyectos
+                            <span
+                                aria-hidden="true"
+                                className="transition-transform duration-200 group-hover:translate-x-0.5"
+                            >
+                                →
+                            </span>
+                        </Link>
+                    </motion.header>
+
+                    <motion.div
+                        className="!mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
+                        variants={containerVariants}
+                    >
+                        {personalProjects.map((project: ProjectsInterface) => (
+                            <motion.div
+                                key={project.id}
+                                variants={itemVariants}
+                                className="h-full"
+                            >
+                                <Link
+                                    to={`/projects/${project.id}`}
+                                    className="
+                                        group flex h-full flex-col rounded-2xl
+                                        border border-white/10 bg-black/25 !p-4
+                                        transition-all duration-200
+                                        hover:-translate-y-0.5 hover:border-[#ff5555]/40 hover:bg-black/40
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white
+                                        focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414]
+                                    "
+                                >
+                                    <div className="flex items-start justify-between gap-3">
+                                        <div>
+                                            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#ff8a8a]">
+                                                {project.tecnologies[0]}
+                                            </span>
+                                            <h3 className="!mt-1 font-medium">
+                                                {project.title}
+                                            </h3>
+                                        </div>
+                                        <span
+                                            aria-hidden="true"
+                                            className="text-[#ff8a8a] transition-transform duration-200 group-hover:translate-x-0.5"
+                                        >
+                                            →
+                                        </span>
+                                    </div>
+                                    <p className="!mt-2 line-clamp-2 text-xs leading-relaxed text-white/55">
+                                        {project.description}
+                                    </p>
+                                    <div className="!mt-3 flex flex-wrap gap-1.5">
+                                        {project.tecnologies
+                                            .slice(0, 3)
+                                            .map((tech: string) => (
+                                                <span
+                                                    key={tech}
+                                                    className="rounded-full border border-white/10 bg-white/5 !px-2.5 !py-0.5 text-[0.65rem] text-white/55"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </motion.section>
 
