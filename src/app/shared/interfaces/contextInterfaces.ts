@@ -20,10 +20,23 @@ export interface ProjectsInterface {
     experience?: ExperienceMeta;
 }
 
+export type SkillCategory =
+    | "frontend"
+    | "backend"
+    | "mobile"
+    | "database"
+    | "data"
+    | "architecture"
+    | "tools";
+
 export interface SkillsInterface {
     item: React.ReactNode;
     nombre: string;
     color: string;
+    category: SkillCategory;
+    description: string;
+    featured?: boolean;
+    projectIds?: number[];
 }
 
 export interface EducationItem {

@@ -32,6 +32,7 @@ export default function AboutPage() {
         (project: ProjectsInterface) => project.category === "project"
     );
     const experienceMeta = experienceProjects[0]?.experience;
+    const coreSkills = skills.filter((skill: SkillsInterface) => skill.featured);
 
     return (
         <motion.main
@@ -323,24 +324,38 @@ export default function AboutPage() {
                     animate="show"
                 >
                     <motion.header
-                        className="flex items-center justify-between !mb-4"
+                        className="flex items-center justify-between gap-3 !mb-4"
                         variants={itemVariants}
                     >
                         <h2 className="text-lg sm:text-xl font-semibold">Stack principal</h2>
-                        <span className="text-xs sm:text-sm text-white/50">
-                            Herramientas que uso a diario
-                        </span>
+                        <div className="flex items-center gap-3">
+                            <span className="hidden text-xs text-white/50 sm:inline">
+                                Herramientas que uso a diario
+                            </span>
+                            <Link
+                                to="/skills"
+                                className="group inline-flex items-center gap-1 text-xs font-medium text-[#ff8a8a] transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] sm:text-sm"
+                            >
+                                Ver todas
+                                <span
+                                    aria-hidden="true"
+                                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                                >
+                                    →
+                                </span>
+                            </Link>
+                        </div>
                     </motion.header>
 
                     <motion.div
                         className="
                             grid
-                            grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
+                            grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4
                             !gap-3 sm:!gap-4
                         "
                         variants={containerVariants}
                     >
-                        {skills.map((skill: SkillsInterface) => (
+                        {coreSkills.map((skill: SkillsInterface) => (
                             <div
                                 key={skill.nombre}
 
