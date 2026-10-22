@@ -48,6 +48,14 @@ body {
   color: #fff;
 }
 
+/* La imagen se descubre desde el CSS, antes de que React monte la página. */
+.app-background {
+  background-image: url("./assets/img/background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 ::selection {
   background: #ff5555;
   color: #ffffff;

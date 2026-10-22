@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import type { ProjectsInterface } from "../interfaces/contextInterfaces";
 
 export default function ProjectCarousel({ project }: { project: ProjectsInterface }) {
     const [current, setCurrent] = useState(0);
     const [paused, setPaused] = useState(false);
+    const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-    const images = project?.img || [];
+    const images = useMemo(() => project?.img || [], [project?.img]);
 
     useEffect(() => {
         if (images.length <= 1 || paused) return;
@@ -17,6 +18,13 @@ export default function ProjectCarousel({ project }: { project: ProjectsInterfac
         };
     }, [images.length, paused]);
 
+    // Precarga la siguiente captura para que el cambio del carrusel no quede en blanco.
+    useEffect(() => {
+        if (images.length <= 1) return;
+        const nextImage = new Image();
+        nextImage.src = images[(current + 1) % images.length];
+    }, [current, images]);
+
     return (
         <figure
             className="w-full h-full flex overflow-hidden relative bg-neutral-950"
@@ -26,14 +34,26 @@ export default function ProjectCarousel({ project }: { project: ProjectsInterfac
             onFocus={() => setPaused(true)}
             onBlur={() => setPaused(false)}
         >
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950"
+            />
+
             {images.map((img: string, index: number) => (
                 <img
                     key={index}
                     src={img}
                     alt={`${project?.title || "Proyecto"} — captura ${index + 1}`}
-                    loading="lazy"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    decoding="async"
+                    onLoad={() => {
+                        setLoadedImages((prev) =>
+                            prev[index] ? prev : { ...prev, [index]: true }
+                        );
+                    }}
                     className={`w-full h-full object-contain transition-opacity duration-700 absolute top-0 left-0
-            ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}
+            ${index === current && loadedImages[index] ? "opacity-100 z-10" : "opacity-0 z-0"}
           `}
                 />
             ))}

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { motion } from "motion/react"
 import { Link } from "react-router"
 import type { ProjectsInterface } from "../interfaces/contextInterfaces"
@@ -10,6 +11,7 @@ export interface ProjectCardProps {
 
 export default function ProjectCard({ project, featured = false, onImageLoad }: ProjectCardProps) {
     const { id, title, img, tecnologies, category, experience } = project
+    const [imageLoaded, setImageLoaded] = useState(false)
     const visibleTech = tecnologies.slice(0, 3)
     const extraTech = tecnologies.length - visibleTech.length
 
@@ -25,10 +27,21 @@ export default function ProjectCard({ project, featured = false, onImageLoad }: 
                 ${featured ? "aspect-[16/9] sm:aspect-[21/9]" : "aspect-[16/10]"}
             `}
         >
+            {!imageLoaded && (
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950"
+                />
+            )}
             <img
-                onLoad={onImageLoad}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                onLoad={() => {
+                    setImageLoaded(true)
+                    onImageLoad?.()
+                }}
+                loading={featured ? "eager" : "lazy"}
+                fetchPriority={featured ? "high" : "auto"}
+                decoding="async"
+                className={`absolute inset-0 h-full w-full object-cover transition-[transform,opacity] duration-700 ease-out group-hover:scale-[1.04] ${imageLoaded ? "opacity-100" : "opacity-0"}`}
                 src={img[0]}
                 alt={`Captura del proyecto ${title}`}
             />
